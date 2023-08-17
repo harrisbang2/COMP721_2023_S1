@@ -1,0 +1,22 @@
+
+SELECT * FROM `car` ;
+
+
+SELECT make, model, price
+FROM car
+ORDER BY make, model;
+
+SELECT make, model
+FROM car
+WHERE price <= 20000
+ORDER BY make, model;
+
+SELECT make, model
+FROM car
+WHERE price > 15000
+ORDER BY make, model
+
+
+SELECT AVG( price ) AS avg_price
+FROM car
+WHERE model = "Falcon";

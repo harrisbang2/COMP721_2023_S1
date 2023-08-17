@@ -1,0 +1,25 @@
+// checking the existance of the table
+SELECT COUNT(*) FROM information_schema.TABLES WHERE table_schema = '$dbnm' AND table_name = 'Status'
+
+// creating a Table
+create table Status(
+status_Code varchar(30) NOT NULL UNIQUE,
+status varchar(30) NOT NULL,
+share varchar(30),
+date varchar(30) NOT NULL,
+Allow_Like varchar(30),
+Allow_Comments varchar(30),
+Allow_Share varchar(30));
+
+//Searching *(all) from the Status table by statuscode (this was used to check if there is already existance of the statuscode which should be unique)
+SELECT * FROM Status WHERE status_Code = '$statuscode'
+
+//posting (adding) the new status
+INSERT INTO Status (status_Code, status, share,date,Allow_Like,Allow_Comments,Allow_Share) VALUES ('$statuscode', '$status', '$share','$date','$AllowLike','$AllowComments','$AllowShare');
+
+
+// Searching *(all) from the Status table by search input
+SELECT * FROM Status WHERE status= '$search'
+
+//Droping the table
+DROP TABLE Status

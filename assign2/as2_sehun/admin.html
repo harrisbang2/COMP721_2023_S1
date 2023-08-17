@@ -1,0 +1,47 @@
+<!?file simpleajax.htm -->
+<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+  <head> 
+    <title>A Simple Ajax Example</title>
+<!-- scripts for ajax  -------> 
+	<script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="admin.js"> </script>
+<!-- externak css ------->
+<link rel="stylesheet" href="mycss.css">
+<!-- internal css ------->
+<STYLE>
+.insider_TWO{
+position: absolute;
+left: 290px;
+top: 150px;
+width: 60%;
+height: 100%;
+}
+</STYLE>
+  </head> 
+  <body>
+<!-- main starts ------->
+<!-- maincontainer for centering elements------->
+<div class ="maincontainer">
+<!-- nav------->
+<div class="topnav">
+  <a href="booking.html">Home</a>
+  <a href="admin.html">poststatusform</a>
+</div>
+<!-- nav ends------->
+<!-- insider_TWO for centering elements in maincontainer  ------->
+<div class ="insider_TWO">
+  <H1>Search bookings with Status Code</H1>
+	<form>
+	    <label>Status code:  <input type="text" name="bsearch"> </label>
+	    <input name="submit" type = "button" onClick = "getData('admin.php','content', bsearch.value) " value = "Fetch from server">
+	</form>
+<!-- the tablae show up target div------->
+	<div id="content"> 
+	    <p>The table will go here.</p>  
+	</div> 
+<!-- insider_TWO ends  ------->
+</div> 
+<!-- maincontainer ends------->
+</div> 
+ </body> 
+</HTML>

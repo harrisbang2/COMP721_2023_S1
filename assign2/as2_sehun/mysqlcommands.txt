@@ -1,0 +1,10 @@
+sql
+//select
+SELECT * FROM ass2;
+//inserting 
+INSERT INTO ass2 (cname,phone,unumber,snumber,stname,sbname,dsbname,date,time,status,bookingref) VALUES ('$cname', '$phone', '$unumber','$stname','$snumber','$sbname','$dsbname','$date','$time','$unassigned','$bookingref');
+
+// select data with in 2hour
+SELECT * FROM ass2 WHERE date ='$Date' AND time < '$Twohourlater' AND time >= '$Time';
+// select data with status code
+SELECT * FROM ass2 WHERE bookingref= '$bsearch'

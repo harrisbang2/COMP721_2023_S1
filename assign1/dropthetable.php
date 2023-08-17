@@ -1,0 +1,93 @@
+<html>
+<head>
+<link rel="stylesheet" href="mycss.css">
+<title>
+Sehun Bang Ass1 About
+</title>
+<style>
+.maincontainer{
+position: absolute;
+left: 250px;
+width: 70%;
+height: 200%;
+background-color: powderblue;
+}
+.insider{
+position: absolute;
+left: 210px;
+top: 80px;
+width: 60%;
+}
+
+</style>
+</head>
+<body>
+<div class ="maincontainer">
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="poststatusform.php">poststatusform</a>
+  <a href="searchstatusform.html">search</a>
+  <a href="about.html">About</a>
+</div>
+
+<div class ="insider">
+<h1>Sehun Bang Ass1 About page</h1>
+<h1>ID: 20111406</h1>
+<h1>email: grc5671@autuni.ac.nz</h1>
+<br>
+<p>About Page</p>
+<h3>Questions</h3>
+<!-- Question 1-->
+<p>Which special features have you done or attempted in creating the website?</p>
+<div style="color:red;"><p>Ans: the part i did which was not in the assingment sheet instruction. would be creating nav bar /external internal inline css/positioning  </p></div>
+
+<!-- Question 2-->
+<p>Which part did you have trouble with?</p>
+<div style="color:red;"><p>Ans: The hardest part for me is the poststatusprocess.php because of the 
+<br> there were alot connected php/sql such as checking the the table exist -> then create table -> then check the format for status code and status -> check if there is duplication of the statuscode -> insert into data..
+</p></div>
+
+<!-- Question 3-->
+<p>What would you like to do better next time?</p>
+<div style="color:red;"><p>Ans: Organize or Backend(MySQl on this assign1) coding,(more efficient) and CSS Desing,(not just a cute bear background making things like proper nav bar and footer). </p></div>
+
+<!-- Question 4-->
+<p>What you have learnt along the way? Did you use any references or resources during this 
+project? If so, please include the sources?</p>
+<div style="color:red;"><p>Ans: the things i learned (not including the lecture) was positioning using the css (absolute relative etc...).
+these are the references for the assisting my assignment:<div style="color:blue;">
+<br>https://www.w3schools.com/css/css_background.asp
+<br>https://www.w3schools.com/css/css_positioning.asp
+<br> COMP721 LECTURE SLIDE week 5
+<br> COMP721 LECTURE SLIDE week 4
+<br> COMP721 LECTURE SLIDE week 3
+<br> COMP721 LECTURE SLIDE week 2</div></div>
+</p><H2>Table Reset Button</H2>
+<form action = "dropthetable.php" method = "post">
+<button type="submit">Drop The Table!</button>
+</form>
+<?php
+require("settings.php");
+/*Connect to the database */
+$connection = @mysqli_connect($host,$user ,$pswd, $dbnm) or die("<p>database connection is not working</p>");
+/* check if the table exist*/
+$command = "SELECT COUNT(*) FROM information_schema.TABLES WHERE table_schema = '$dbnm' AND table_name = 'Status'";
+$result = $connection->query($command);
+if ($result && $result->fetch_row()[0] == 1) {
+echo "<red>Table exists therefore droping the table</red><br>";
+$drop ="DROP TABLE Status";
+$drop_table = mysqli_query($connection, $drop);
+echo "<red>Table Drop Successful</red>";
+}
+else{
+echo "There is no Table ....<br>";
+}
+$connection ->close();
+?>
+<br>
+<br>
+<a href="http://grc5671.cmslamp14.aut.ac.nz/assign1/index.html">Go back to the Home</a>
+</div>
+</div>
+</body> 
+</html>

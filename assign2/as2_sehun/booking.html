@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>
+ Cabs Online
+</title>
+
+<!-- Scripts use for the ajax-->
+<script src="xhr.js"></script>
+<script src="booking.js"></script>
+<!-- externak css ------->
+<link rel="stylesheet" href="mycss.css">
+<!-- internal css -->
+<style>
+.container{
+position: absolute;
+left: 370px;
+top: 450px;
+width: 80%;
+}
+</style>
+</head>
+<body>
+<!--  Body Start -->
+<!-- div for maincontainer to make stuff on center-->
+<div class ="maincontainer">
+<!--  Nav Bar -->
+<div class="topnav">
+  <a href="booking.html">Home</a>
+  <a href="admin.html">poststatusform</a>
+</div>
+<h1><center>HELLO WELCOME TO THE CABS ONLINE</center></h1>
+<!--
+ User inputs -->
+<!-- div for insider to make contents middle of the maincontainer  -->
+<div class ="insider">
+<form action = "javascript:addBooking()" method = "post">
+<label for="cname">Customer Name:</label>
+<input type="text" name ="cname" id ="cname" required><br>
+<label for="Phone">Phone Number:</label>
+<input type="text" name ="phone" pattern="\d*" inputmode="numeric" minlength="10" maxlength="12" required><br>
+<label for="unumber"> Unit Number:</label>
+<input type="text" name ="unumber"><br>
+<label for="snumber">Street Number:</label>
+<input type="text" name ="snumber" required ><br>
+<label for="stname">Street Name:</label>
+<input type="text" name ="stname" required><br>
+<label for="sbname">Suburb:</label>
+<input type="text" name ="sbname" id ="sbname"><br>
+<label for="dsbname">Destination Suburb:</label>
+<input type="text" name ="dsbname" id ="dsbname"><br>
+<label for="date">Pick-Up Date:</label>
+<input type="date" name="date" required ><br>
+<label for="time">Pick-Up Time:</label>
+<input type="time" name="time" required />
+<br>
+<input name="submit" type = "submit" onClick = "getData('booking.php','targetDiv', date.value, time.value, cname.value, phone.value, unumber.value, snumber.value, stname.value, sbname.value, dsbname.value)" value = "Button">
+</form>
+
+<!-- A dive for the status box to show up after the click(getData) -->
+
+</div>
+<!-- div for insider ends -->
+<!-- Div fht the status box -->
+<!-- div for maincontainer ends -->
+<div class="container"> 
+<div id="targetDiv"> 
+<p>The fetched data will go here.</p>  
+</div>
+</div>
+<!-- div for box ended -->
+</div>
+</body>
+</html>

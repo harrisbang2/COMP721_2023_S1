@@ -1,0 +1,60 @@
+body {
+
+}
+.main{
+position: absolute;
+left: 260px;
+width: 70%;
+height: 100%;
+background-color: powderblue;
+}
+.insider{
+position: absolute;
+left: 210px;
+top: 80px;
+width: 60%;
+height: 100%;
+}
+button {
+  background-color: #00aaff;
+  border: none;
+  color: white;
+  padding: 5px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #12232b;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #565657;
+  color: white;
+}
+.maincontainer{
+position: absolute;
+left: 250px;
+width: 70%;
+height: 200%;
+background-color: #8898b3;
+}
+.insider{
+position: absolute;
+left: 370px;
+top: 150px;
+width: 80%;
+}
