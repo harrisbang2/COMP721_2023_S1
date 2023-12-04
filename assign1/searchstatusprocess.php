@@ -22,8 +22,6 @@ Sehun Bang Ass1 Search Process
 <br>
 <p>Search status form</p>
 <?php
-//functions
-
 $search = $_GET["search"];
 echo "your seach is  :  $search <br>";
 // confirming the input is in correct format
